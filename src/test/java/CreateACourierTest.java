@@ -9,7 +9,7 @@ import pojos.LoginRequest;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class CreateACourier {
+public class CreateACourierTest {
 
     private CourierPageObject courierPageObject;
     private String courierId;

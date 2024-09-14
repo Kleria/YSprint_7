@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Before;
@@ -8,7 +9,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class CheckOrders {
+public class CheckOrdersTest {
 
     @Before
     public void setUp() {
@@ -16,7 +17,8 @@ public class CheckOrders {
     }
 
     @Test
-    public void getOrdersList() {
+    @Step("check an order list")
+    public void getOrdersListTest() {
         Response response = given()
                 .header("Content-type", "application/json")
                 .when()

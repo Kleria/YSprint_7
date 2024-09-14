@@ -1,5 +1,6 @@
 package pageObjects;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import pojos.Courier;
@@ -10,7 +11,7 @@ public class CourierPageObject {
     public CourierPageObject() {
         RestAssured.baseURI = "https://qa-scooter.praktikum-services.ru/";
     }
-
+    @Step("make a courier")
     public Response createCourier(Courier courier) {
         return
                 RestAssured.given()
@@ -19,7 +20,7 @@ public class CourierPageObject {
                         .when()
                         .post("/api/v1/courier");
     }
-
+    @Step("login as a courier")
     public Response loginCourier(LoginRequest loginRequest) {
         return
                 RestAssured.given()
@@ -28,7 +29,7 @@ public class CourierPageObject {
                         .when()
                         .post("/api/v1/courier/login");
     }
-
+    @Step("delete a courier")
     public Response deleteCourier(String courierId) {
         return
                 RestAssured.given()
